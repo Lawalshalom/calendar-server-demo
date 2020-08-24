@@ -1,0 +1,50 @@
+{
+	"name": "calendar-app-demo",
+	"version": "0.1.0",
+	"description": "Calendar app api",
+	"author": "Femi Lawal",
+	"main": "app.js",
+	"scripts": {
+		"start": "node ./bin/www"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"cookie-parser": "~1.4.3",
+		"cors": "^2.8.5",
+		"cron": "^1.1.0",
+		"debug": ">=2.6.9",
+		"dotenv-safe": "^4.0.4",
+		"eslint": "^3.19.0",
+		"express": "^4.16.4",
+		"moment": "^2.11.2",
+		"moment-timezone": "^0.5.0",
+		"mongodb": "^3.2.6",
+		"mongoose": "^5.5.12",
+		"morgan": "~1.7.0",
+		"npm": "^6.4.1",
+		"pug": "^2.0.0-beta.12",
+		"serve-favicon": "~2.3.0",
+		"shortid": "^2.2.14",
+		"twilio": "~3.0.0-rc.13",
+		"webpack": "^4.44.1"
+	},
+	"engines": {
+		"node": "10.15.0"
+	},
+	"license": "MIT",
+	"keywords": [
+		"node",
+		"gomix",
+		"express"
+	],
+	"devDependencies": {
+		"webpack-cli": "^3.3.12",
+		"chai": "^3.5.0",
+		"cheerio": "^0.22.0",
+		"eslint-config-google": "^0.7.1",
+		"mocha": "^3.1.2",
+		"mongo-in-memory": "0.0.5",
+		"proxyquire": "^1.7.10",
+		"supertest": "^2.0.1"
+	}
+}

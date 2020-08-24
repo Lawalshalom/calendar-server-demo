@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Test Admin</title>
+	</head>
+	<body>
+		<div>
+			<form id="login">
+				<input type="name" name="username" placeholder="username" />
+				<input type="password" name="password" placeholder="password" />
+				<button type="submit">SUBMIT</button>
+			</form>
+		</div>
+
+		<div>
+			<form id="addBirthday">
+				<input type="name" name="name" placeholder="name" />
+				<input type="date" name="birthday" />
+				<button type="submit">SUBMIT</button>
+			</form>
+		</div>
+
+		<button id="delete-birthday">Delete Birthday</button>
+	</body>
+	<script>
+		const formLogin = document.querySelector("#login");
+		const addBirthdayForm = document.getElementById("addBirthday");
+
+		const adminLogin = (e) => {
+			e.preventDefault();
+			const formData = new FormData(formLogin);
+			const username = formData.get("username");
+			const password = formData.get("password");
+
+			const Params = {
+				headers: {
+					"Content-type": "application/JSON",
+				},
+				body: JSON.stringify({
+					username: username,
+					password: password,
+				}),
+				method: "POST",
+			};
+
+			async function getBirthdays(e) {
+				const res = await fetch("http://localhost:3000/admin/login", Params);
+				const data = await res.json();
+				console.log(data);
+			}
+			getBirthdays();
+		};
+
+		formLogin.onsubmit = adminLogin;
+
+		const updateBirthday = (e) => {
+			e.preventDefault();
+			const formData = new FormData(addBirthdayForm);
+			const name = formData.get("name");
+			const birthday = formData.get("birthday");
+
+			const Params = {
+				headers: {
+					"Content-type": "application/JSON",
+				},
+				body: JSON.stringify({
+					name: name,
+					birthday: birthday,
+				}),
+				method: "POST",
+			};
+
+			async function addBirthday() {
+				const res = await fetch(
+					"http://localhost:3000/add/ug/birthday",
+					Params
+				);
+				const data = await res.json();
+				console.log(data);
+			}
+			addBirthday();
+		};
+
+		addBirthdayForm.onsubmit = updateBirthday;
+
+		const deleteBtn = document.getElementById("delete-birthday");
+		const deleteBirthday = () => {
+			const formData = new FormData(addBirthdayForm);
+			const name = formData.get("name");
+			const birthday = formData.get("birthday");
+
+			const Params = {
+				headers: {
+					"Content-type": "application/JSON",
+				},
+				body: JSON.stringify({
+					name: name,
+					birthday: birthday,
+				}),
+				method: "POST",
+			};
+
+			async function delBirthday() {
+				const res = await fetch(
+					"http://localhost:3000/delete/ug/birthday",
+					Params
+				);
+				const data = await res.json();
+				console.log(data);
+			}
+			delBirthday();
+		};
+
+		deleteBtn.onclick = deleteBirthday;
+	</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calendar app-Demo</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<div class="container">
+		<div class="section-title" id="calendar-title">
+			<h2><strong>My Birthday Calendar</strong></h2>
+		</div>
+		<div class="mycalendar">
+			<div>
+		<div class="delete-success"><p>success</p></div>
+		<div class="delete-failed"><p>failed</p></div>
+				<div id="calendar">
+				</div>
+			</div>
+			<div class="calendar-control">
+				<div class="input-form">
+					<form id="viewDate">
+						<input type="date" name="my-date" required placeholder="mm-dd-yyyy" />
+						<button type="submit" class="submit-btn">
+							View Date
+						</button>
+					</form>
+				</div>
+				<div class="add-event">
+					<p>Add Birthday to Calendar</p>
+					<form id="addEvent">
+						<input
+							type="name"
+							name="name"
+							placeholder="Enter Name"
+							required
+							minLength="3"
+						/>
+					<label>Enter Birthday</label>
+					<input type="date" name="my-date" required placeholder="mm-dd-yyyy" />
+					<p class="sub-text"><em>Enter current year if birthday year is not known</em></p>
+					<button type="submit" class="submit-btn">
+						Add Birthday
+					</button>
+				</form>
+			</div>
+			<div class="birthday loading"><p>Loading...</p></div>
+		 <div class="birthday failed"><p></p></div>
+		 <div class="birthday success"><p></p></div>
+		</div>
+	</div>
+	<div class="table-title"><h2>Birthday List</h2></div>
+	<div id="table">
+	</div>
+	<div class="clear-fix"></div>
+</div>
+
+<footer>
+	<div class="footer">
+		<p>Built by @lawalshalom &copy;2020</p>
+		<p>Contact: +234 816 3729</p>
+	</div>
+</footer>
+	</body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+	<script src="calendar.js"></script>
+</html>
