@@ -1,2 +1,3 @@
+#Calendar Birthday SMS Reminder
 This demo of my commercial birthday calendar notification app is hosted on
-https://somethong.herokuapp.com
+https://calendar-app-demo.herokuapp.com
